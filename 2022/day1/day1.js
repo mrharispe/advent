@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const foodByElf = fs.readFileSync('./day1/day1.txt', 'utf8').split('\n\n');
+const foodByElf = fs.readFileSync(`${__dirname}/day1.txt`, 'utf8').split('\n\n');
 
 const getCaloriesForElf = (food) => {
     let caloriesCarried = 0;
