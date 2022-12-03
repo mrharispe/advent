@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const rounds = fs.readFileSync(`${__dirname}/day2.txt`, "utf8").split("\n");
+const rounds = fs.readFileSync(`${__dirname}/input.txt`, "utf8").split("\n");
 
 const resultsPerShape = {
   X: { points: 1, outcome: { A: 3, B: 0, C: 6 } },
