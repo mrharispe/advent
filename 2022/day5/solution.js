@@ -7,10 +7,10 @@ const [stacksData, movesData] = fs
 
 const stacks = {};
 
-const stacksInSlices = stacksData.map((line) =>
+const stacksInSlices = stacksData.map((slice) =>
   // There are 4 characters before the next stack, and the digit is character 1
   // i.e.: "[A] "
-  [...line].filter((value, index) => index % 4 === 1)
+  [...slice].filter((value, index) => index % 4 === 1)
 );
 
 stacksInSlices.forEach((column) => {
@@ -35,7 +35,6 @@ const getTopCrates = (stacks) => {
   return topCrates;
 };
 
-// PART 1 **********************************************************************
 const cleanMove = (move) => {
   return move
     .replace("move ", "")
@@ -43,6 +42,8 @@ const cleanMove = (move) => {
     .replace(" to ", ";")
     .split(";");
 };
+
+// PART 1 **********************************************************************
 
 const part1 = () => {
   const stacksClone = JSON.parse(JSON.stringify(stacks));
